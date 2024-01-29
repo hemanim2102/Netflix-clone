@@ -10,30 +10,49 @@
 </head>
 
 <body>
-    <header id="header">
-        <!-- Navbar -->
-        <div class="container">
-            <div class="navbar">
-                <div class="nav-left">
-                    <a href="index.html">
-                        <img src="images/netflix-icon.png" alt="netflix-icon" class="netflic-logo">
-                    </a>
-                </div>
-                <div class="nav-right">
-                    <img src="images/Netflix-avatar.png" alt="avatar-icon" class="avatar">
-                </div>
-            </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="images/netflix-icon.png" alt="netflix-icon" class="netflix-logo">
+            </a>
+            <ul class="main-nav">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">TV Shows</li>
+                <li class="nav-item">Movies</li>
+                <li class="nav-item">News & Popular</li>
+                <li class="nav-item">My Lists</li>
+                <li class="nav-item">Browse by Language</li>
+            </ul>
         </div>
-        <!-- Banner -->
-        <!-- <header id="Banner"> -->
+        <div class="nav-right">
+            <img src="images/Netflix-avatar.png" alt="avatar-icon" class="avatar">
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <header id="Banner">
         <div class="content">
             <h1 class="title"></h1>
             <div class="buttons">
                 <button id="button">Play</button>
                 <button id="button">My List</button>
             </div>
+            <p id="description"></p>
         </div>
+        <div class="banner-bottomFade"></div>
     </header>
+
+    <!-- main body-->
+    <!-- row -->
+    <div id="headrow">
+        <div class="row">
+            <h2 class="row-title"></h2>
+            <div class="posters"></div>
+        </div>
+    </div>
+
 </body>
 
 </html>
