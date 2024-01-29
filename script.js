@@ -45,8 +45,14 @@ fetch(requests.NetflixOriginals)
     .then((data) => {
         console.log(data.results);
 
-        // const setMovie =
-        //     data.results[Math.floor(Math.random() * data.results.length - 1)];
+        const setMovie =
+            data.results[Math.floor(Math.random() * data.results.length - 1)];
 
-        // var banner = document.getElementById("Banner");
-    })
+        var banner = document.getElementById("Banner");
+        var banner_title = document.getElementById("title");
+        var banner_description = document.getElementById("description");
+
+        banner.style.backgroundImage = "url(" + banner_url + setMovie.backdrop_path + ")";
+        banner_description.innerText = truncateString(setMovie.overview, 150);
+        banner_title.innerText = setMovie.name;
+    });
