@@ -56,3 +56,34 @@ fetch(requests.NetflixOriginals)
         banner_description.innerText = truncateString(setMovie.overview, 150);
         banner_title.innerText = setMovie.name;
     });
+
+//to display movie rows
+fetch(requests.NetflixOriginals)
+    .then((res) => res.json())
+    .then((data) => {
+        const head_row = document.getElementById("head-row");
+        const row = document.createElement("div");
+        row.className = "row";
+        row.classList.add("Netflix_row");
+        head_row.appendChild(row);
+
+        const title = document.createElement("h2");
+        title.className = "row-title";
+        title.innerText = "NETFLIX ORIGINALS";
+        row.appendChild(title);
+
+        const row_posters = document.createElement("div");
+        row_posters.className = "row-posters";
+        row.appendChild(row_posters);
+
+        data.results.forEach((movie) => {
+            console.log(movie);
+            const poster = document.createElement("img");
+            poster.className = "row-poster-img";
+
+            var s = movie.name.replace(/\s+/g, "");
+            poster.id = s;
+            poster.src = img_url + movie.poster_path;
+            row_posters.appendChild(poster);
+        });
+    })
