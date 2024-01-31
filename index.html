@@ -7,27 +7,30 @@
     <title>Home | Netflix</title>
     <link rel="stylesheet" href="home-page.css">
     <script src="script.js" defer></script>
+
 </head>
 
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
+
         <div class="nav-left">
             <a href="index.html">
                 <img src="images/netflix-icon.png" alt="netflix-icon" class="netflix-logo">
             </a>
             <ul class="main-nav">
-                <li class="nav-item">Home</li>
-                <li class="nav-item">TV Shows</li>
-                <li class="nav-item">Movies</li>
-                <li class="nav-item">News & Popular</li>
-                <li class="nav-item">My Lists</li>
-                <li class="nav-item">Browse by Language</li>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">TV Shows</a></li>
+                <li class="nav-item"><a href="#">Movies</a></li>
+                <li class="nav-item"><a href="#">News & Popular</a></li>
+                <li class="nav-item"><a href="#">My Lists</a></li>
             </ul>
         </div>
         <div class="nav-right">
-            <img src="images/Netflix-avatar.png" alt="avatar-icon" class="avatar">
+            <a href="#"><img src="images/—Pngtree—search icon_4490393.png" id="search-png"></a>
+            <a href="#"><img src="images/notification-icon-512x512-zylrrpcd.png" id="notification-png"></a>
+            <a href="#"><img src="images/Netflix-avatar.png" alt="avatar-icon" class="avatar"></a>
         </div>
     </div>
 
@@ -53,6 +56,27 @@
         </div>
     </div>
 
+    <script>
+        // window.addEventListener("scroll", function () {
+        //     var nav = document.querySelector(".navbar");
+        //     nav.classList.toggle("active", window.scrolly > 0);
+        // })
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                if (scroll > 300) {
+                    $(".navbar").css("background", "#111");
+                }
+
+                else {
+                    $(".navbar").css("background", "transparent");
+                }
+            })
+        })
+    </script>
+
 </body>
+
 
 </html>
