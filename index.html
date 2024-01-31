@@ -20,7 +20,7 @@
                 <img src="images/netflix-icon.png" alt="netflix-icon" class="netflix-logo">
             </a>
             <ul class="main-nav">
-                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item" id="home-active"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">TV Shows</a></li>
                 <li class="nav-item"><a href="#">Movies</a></li>
                 <li class="nav-item"><a href="#">News & Popular</a></li>
@@ -50,30 +50,32 @@
     <!-- main body-->
     <!-- row -->
     <div id="head-row">
-        <div class="row">
+        <!-- <div class="row">
             <h2 class="row-title"></h2>
             <div class="row-posters"></div>
-        </div>
+        </div> -->
     </div>
 
     <script>
-        // window.addEventListener("scroll", function () {
-        //     var nav = document.querySelector(".navbar");
-        //     nav.classList.toggle("active", window.scrolly > 0);
-        // })
+        window.addEventListener("scroll", () => {
+            var nav = document.querySelector(".navbar");
+            nav.classList.toggle("active", window.scrolly > 0);
 
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var scroll = $(window).scrollTop();
-                if (scroll > 300) {
-                    $(".navbar").css("background", "#111");
-                }
-
-                else {
-                    $(".navbar").css("background", "transparent");
-                }
-            })
+            // if (window.scrollY > 0) {
+            //     nav.classList.add('active');
+            // } else {
+            //     nav.classList.remove('active');
+            // }
         })
+
+        // window.addEventListener('scroll', () => {
+        //     const verticalScrollPx = window.scrollY || window.pageYOffset;
+
+        //     if (verticalScrollPx > 300) {
+        //         document.querySelector(".navbar").style.backgroundColor = '#111';
+        //     }
+        // });
+
     </script>
 
 </body>

@@ -114,36 +114,6 @@ fetch(requests.NetflixOriginals)
         });
     })
 
-//trending movies
-fetch(requests.Trending)
-    .then((res) => res.json())
-    .then((data) => {
-        const head_row = document.getElementById("head-row");
-        const row = document.createElement("div");
-        row.className = "row";
-        row.classList.add("Netflix_row");
-        head_row.appendChild(row);
-
-        const title = document.createElement("h2");
-        title.className = "row-title";
-        title.innerText = "Trending";
-        row.appendChild(title);
-
-        const row_posters = document.createElement("div");
-        row_posters.className = "row-posters";
-        row.appendChild(row_posters);
-
-        data.results.forEach((movie) => {
-
-            const poster = document.createElement("img");
-            poster.className = "row-poster-img";
-
-            var s1 = movie.id;
-            poster.id = s1;
-            poster.src = img_url + movie.poster_path;
-            row_posters.appendChild(poster);
-        });
-    })
 
 //for movie genres rows
 function fetch_And_Build_Section(fetchUrl, category) {
@@ -176,18 +146,52 @@ function fetch_And_Build_Section(fetchUrl, category) {
                 var s2 = movie.id;
                 poster.id = s2;
                 poster.src = img_url + movie.backdrop_path;
-                poster.style.maxHeight = "150px";
+                poster.style.maxHeight = "140px";
                 row_posters.appendChild(poster);
             });
         })
         .catch(err => console.error(err));
 }
 
+
 fetch_And_Build_Section(paths.fetchMovieList(28), "Action");
-fetch_And_Build_Section(paths.fetchMovieList(35), "Comedy");
+fetch_And_Build_Section(paths.fetchMovieList(878), "Science Fiction");
+
+//trending movies
+fetch(requests.Trending)
+    .then((res) => res.json())
+    .then((data) => {
+        const head_row = document.getElementById("head-row");
+        const row = document.createElement("div");
+        row.className = "row";
+        row.classList.add("Netflix_row");
+        head_row.appendChild(row);
+
+        const title = document.createElement("h2");
+        title.className = "row-title";
+        title.innerText = "Trending";
+        row.appendChild(title);
+
+        const row_posters = document.createElement("div");
+        row_posters.className = "row-posters";
+        row.appendChild(row_posters);
+
+        data.results.forEach((movie) => {
+
+            const poster = document.createElement("img");
+            poster.className = "row-poster-img";
+
+            var s1 = movie.id;
+            poster.id = s1;
+            poster.src = img_url + movie.poster_path;
+            row_posters.appendChild(poster);
+        });
+    })
+
+
 fetch_And_Build_Section(paths.fetchMovieList(27), "Horror");
 fetch_And_Build_Section(paths.fetchMovieList(53), "Thriller");
-fetch_And_Build_Section(paths.fetchMovieList(878), "Science Fiction");
+fetch_And_Build_Section(paths.fetchMovieList(35), "Comedy");
 fetch_And_Build_Section(paths.fetchMovieList(10749), "Romance");
 fetch_And_Build_Section(paths.fetchMovieList(18), "Drama");
 fetch_And_Build_Section(paths.fetchMovieList(10751), "Family");
