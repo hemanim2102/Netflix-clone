@@ -96,6 +96,11 @@ body {
 
 #search-png {
     width: 40px;
+    opacity: 0.8;
+}
+
+#search-png:hover {
+    opacity: 1;
 }
 
 #notification-png {
@@ -158,7 +163,7 @@ body {
     margin-top: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    background-color: rgba(51, 51, 51, .5);
+    background-color: rgba(51, 51, 51, .6);
 }
 
 #button:hover {

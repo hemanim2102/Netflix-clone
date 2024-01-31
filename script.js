@@ -176,6 +176,7 @@ function fetch_And_Build_Section(fetchUrl, category) {
                 var s2 = movie.id;
                 poster.id = s2;
                 poster.src = img_url + movie.backdrop_path;
+                poster.style.maxHeight = "150px";
                 row_posters.appendChild(poster);
             });
         })
