@@ -12,32 +12,11 @@ const paths = {
     fetchMovieList: (id) => `${base_url}/discover/movie?${api_key}&with_genres= ${id}`,
 }
 
-// function init() {
-//     fetch_and_build_AllSections();
-// }
-
-// function fetch_and_build_AllSections() {
-//     fetch(paths.fetchAllCategories)
-//         .then(res => res.json())
-//         .then(res => {
-//             const categories = res.genres;
-//             console.table(categories);
-//         })
-//         .catch(err => console.error(err));
-// }
-
-// init();
-
 //requesting for data
 
 const requests = {
     NetflixOriginals: `${base_url}/discover/tv?${api_key}&with_networks=213`,
     Trending: `${base_url}/trending/all/week?${api_key}&language=en-US`,
-    // ActionMovies: `${base_url}/discover/movie?${api_key}&with_genres= 28`,
-    // ComedyMovies: `${base_url}/discover/movie?${api_key}&with_genres= 35`,
-    // HorrorMovies: `${base_url}/discover/movie?${api_key}&with_genres= 27`,
-    // RomanceMovies: `${base_url}/discover/movie?${api_key}&with_genres= 10749`,
-    // Documentaries: `${base_url}/discover/movie?${api_key}&with_genres= 99`,
 };
 
 //to truncate long data
