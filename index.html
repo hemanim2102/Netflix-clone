@@ -57,24 +57,24 @@
     </div>
 
     <script>
-        window.addEventListener("scroll", () => {
-            var nav = document.querySelector(".navbar");
-            nav.classList.toggle("active", window.scrolly > 0);
+        // window.addEventListener("scroll", () => {
+        //     var nav = document.querySelector(".navbar");
+        //     nav.classList.toggle("active", window.scrolly > 0);
 
-            // if (window.scrollY > 0) {
-            //     nav.classList.add('active');
-            // } else {
-            //     nav.classList.remove('active');
-            // }
-        })
+        //     // if (window.scrollY > 0) {
+        //     //     nav.classList.add('active');
+        //     // } else {
+        //     //     nav.classList.remove('active');
+        //     // }
+        // })
 
-        // window.addEventListener('scroll', () => {
-        //     const verticalScrollPx = window.scrollY || window.pageYOffset;
+        window.addEventListener('scroll', () => {
+            const verticalScrollPx = window.scrollY || window.pageYOffset;
 
-        //     if (verticalScrollPx > 300) {
-        //         document.querySelector(".navbar").style.backgroundColor = '#111';
-        //     }
-        // });
+            if (verticalScrollPx > 300) {
+                document.querySelector(".navbar").style.backgroundColor = '#111';
+            }
+        });
 
     </script>
 
