@@ -58,11 +58,14 @@
 
     <script>
 
-        window.addEventListener('scroll', () => {
-            const verticalScrollPx = window.scrollY || window.pageYOffset;
-
-            if (verticalScrollPx > 300) {
-                document.querySelector(".navbar").style.backgroundColor = '#111';
+       window.addEventListener('scroll', () => {
+            // const verticalScrollPx = window.scrollY || window.pageYOffset;
+            let a = document.querySelector(".navbar")
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                a.classList.add("navbar-scroll")
+            }
+            else {
+                a.classList.remove("navbar-scroll")
             }
         });
 
